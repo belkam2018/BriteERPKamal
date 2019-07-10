@@ -7,6 +7,7 @@ import com.briteERP.utilities.ConfigurationReader;
 import com.briteERP.utilities.Driver;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 
 public class NoteStepDef extends BrowserUtils {
 
@@ -14,7 +15,7 @@ public class NoteStepDef extends BrowserUtils {
      LoginPage page = new LoginPage();
     NoteLocaters noteLocaters = new NoteLocaters();
 
-        @And("user should click on Note button")
+        @Given("user should click on Note button")
         public void user_should_click_on_Note_button () {
             Driver.getDriver().get(ConfigurationReader.getProperty("url"));
             String email = ConfigurationReader.getProperty("eventsUserName");
@@ -29,7 +30,7 @@ public class NoteStepDef extends BrowserUtils {
 
         }
 
-        @Given("user should create note")
+        @Then("user should create note")
         public void user_should_create_note () {
             BrowserUtils.wait(10);
             noteLocaters.createNote.click();
