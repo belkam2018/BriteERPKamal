@@ -11,7 +11,7 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[1]/div[1]/div[2]/ul[1]/li[10]/a[1]/b[1]")
+    @FindBy(xpath = "//b[contains(text(),'Sign in')]")
     public WebElement signIn;
 
     @FindBy(id = "login")
